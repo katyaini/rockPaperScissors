@@ -1,8 +1,6 @@
 
 
-// prompting for player's choice and storing the response in a variable playerChoice
-//var playerChoice = prompt("Enter your choice of either rock, paper or scissors: ").toLowerCase();
-// function to generate a random choice out of the array options
+// function to generate a random choice out of the array options-rock, paper and scissors
 
 function getComputerChoice() {
     var options = ["rock","paper","scissors"];
@@ -14,18 +12,8 @@ function getComputerChoice() {
      var userPoints = 0;
      var computerPoints = 0;
 
-//computerSelection = getComputerChoice();
-//var computerSelection = getComputerChoice();
-//console.log(computerSelection);
+//executing function game (defined below)
 game();
-
-
-//game(playRound);
-//computerWins = true ? console.log("Computer Wins!") : console.log("you win!")
-
-
-
-
 
 // function that takes 2 paraments- a being players choice and b, computer's choice
 //compare both results 
@@ -36,7 +24,6 @@ game();
 
 function playRound(a,b) {
        
-
         if ((a === "rock") && (b === "paper")) {
             computerPoints++
             result = "Score: " + computerPoints +  " " + "computer wins! paper beats rock!";
@@ -53,14 +40,12 @@ function playRound(a,b) {
           }
         else if ((a === "paper") && (b === "rock")) {
           
-        
             result = "you win! paper beats rock!";
             userPoints++;
             return  "Score: " + userPoints + " " + result;
             
         }
-            
-          
+              
         else if ((a === "paper") && (b === "scissors")) {
             result = "computer wins! scissors beats paper";
             computerPoints++;
@@ -70,8 +55,6 @@ function playRound(a,b) {
 
           }
           
-          
-        
         else if ((a === "scissors") && (b === "rock")) {
           
             result = "computer wins! rock beats scissors!";
@@ -85,11 +68,8 @@ function playRound(a,b) {
             userPoints++
             return "Score: " + userPoints + " " + result;
            
-
         }
-            
-            
-        
+                   
       else {
           result = "tie";
           tie++
@@ -98,17 +78,17 @@ function playRound(a,b) {
 
         }
     }
-    function game() {
+   
+  //function game() calls function playRound
+  //iterates 5 times for the function playRound
+   function game() {
      
-
       for (var i = 0; i < 5; i++){
         var computerSelection = getComputerChoice();
+          // prompting for player's choice and storing the response in a variable playerChoice
         var playerChoice = prompt("Enter your choice of either rock, paper or scissors: ").toLowerCase();
-
-        console.log(playRound(playerChoice,computerSelection));
-
-        
-      
+        //calling function play round
+        console.log(playRound(playerChoice,computerSelection));    
 
       }
       if(computerPoints > userPoints) {
@@ -120,10 +100,7 @@ function playRound(a,b) {
       }
       else{
         console.log("Well, you have tied with the machine!")
-      }
-      
-    
-        
+      }      
       
     }
   
@@ -132,7 +109,4 @@ function playRound(a,b) {
       
     
    
-  //function game() calls function playRound
-  //iterates 5 times for the function playRound
-  //we need to return something from each round of playround that indicates the winner
-  //
+
